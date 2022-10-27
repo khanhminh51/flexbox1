@@ -1,0 +1,191 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #ccc;
+}
+.nav{
+    min-height: 42px;
+    background-color: #EF5122;
+    display: flex;
+    justify-content: space-between;
+}
+.nav-list{
+    padding-left: 0;
+    margin:  auto 16px;
+}
+.nav-item{
+    color: #ffff;
+    list-style: none;
+    margin: auto 16px;
+    display: inline-block;
+}
+/* Form layout */
+.form-container{
+    max-width: 360px;
+    padding: 32px;
+    margin: 36px auto 0 auto;
+    background-color: #fff;
+}
+.form_row{
+    padding: 8px 0;
+    display: flex;
+}
+.form_lable{
+min-width: 90px;
+}
+.form_input{
+    flex: 1;
+}
+/* Column Layout */
+.column-layout{
+    margin-top: 36px;
+    padding: 12px 0;
+    background-color: #fff;
+    display: flex;
+}
+.column-item{
+padding:0 16px;
+
+}
+.sidebar-one{
+flex: 1;
+order: 2;
+}
+.sidebar-two{
+flex: 1;
+order: 3;
+}
+.main-column{
+flex: 1;
+order: 1
+}
+/* Feature Layout */
+.feature-layout{
+margin-top: 36px;
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+}
+/* media có tác dụng là với màn hình có độ rộng lớn hơn 740px thi
+sẽ apply flex-direction = row */
+@media(min-width: 740px){
+    .feature-layout{
+        flex-direction: row;
+    }
+}
+.feature-item{
+    padding: 12px 16px;
+    margin-top: 16px;
+    flex-basis: 30%;
+}
+.feature-item:nth-child(1){
+    background-color: rgb(192, 227, 222);
+}
+.feature-item:nth-child(2){
+    background-color: rgb(227, 200, 192);
+}
+.feature-item:nth-child(3){
+    background-color: rgb(226, 192, 227);
+}
+/* Wrap layout */
+.wrap-layout{
+    background-color: #fff;
+    margin-top: 36px;
+    padding: 12px 0 32px 0;
+    display: flex;
+    justify-content: space-around;
+    /* thay đổi kích thước trang web thì xuống dòng */
+    flex-wrap: wrap; 
+}
+.wrap-layout-item{
+    width: 148px;
+    height: 90px;
+    color: #fff;
+    text-align: center;
+    line-height: 90px;
+    font-size:48px;
+    font-weight: 700;
+    margin-top: 20px;
+    background-color: #EF5122;
+}
+.center-layout{
+    background-color: rgb(192, 227, 194);
+    margin: 36px auto 0 auto;
+    padding: 32px 0;
+    max-width: 640px;
+    height: 360px;
+    display: flex;
+}
+.center-layout-item{
+    font-size: 42px;
+    font-weight: 700;
+    margin: auto;
+}
+/* Chart layout */
+.chart-layout{
+margin: 36px auto 0 auto;
+padding: 32px 0;
+height: 320px;
+background-color: #fff;
+display: flex;
+justify-content: space-around;
+/* align-items: flex-end; tương tự align-self */
+}
+.chart-layout-item{
+align-self: flex-end ; /* đổi chiều ngược lại của cột */
+width: 60px;
+color: #fff;
+text-align: center;
+height: var(--percent); /* đặt chiều cao theo tên biến */
+background-color: #EF5122;
+animation: growth ease-in 0.5s; /* hiển thị chuyển động của biểu đồ theo setup của keyframe bên dưới*/
+}
+@keyframes growth{
+    from{
+        opacity: 0;
+        height: calc(var(--percent) - 50%);
+    }
+    to{
+        opacity: 1;
+        height: var(--percent);
+    }
+}
+.the-end{
+margin: 12px auto 48px auto;
+padding: 32px 0;
+max-width: 740px;
+min-height: 360px;
+display: flex;
+/* flex-direction: row-reverse; */
+}
+.end-first{
+padding: 4px 16px;
+background-color: #fff;
+flex: 1;
+}
+.end-second{
+flex: 1;
+display: flex;
+flex-direction: column;
+}
+.end-second-one{
+padding: 4px 16px;
+background-color: rgb(227,192,214);
+flex: 1;
+
+}
+.end-second-two{
+padding: 4px 16px;
+background-color: rgb(192, 210,227);
+flex: 1;
+
+}
